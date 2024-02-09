@@ -92,18 +92,7 @@ function searchImg() {
 }
 
 function templateImg(images) {
-  return images
-    .map(
-      ({
-        webformatURL,
-        largeImageURL,
-        tags,
-        likes,
-        views,
-        comments,
-        downloads,
-      }) =>
-        `<li class="gallery-item">
+  return `<li class="gallery-item">
       <a class="gallery-link" href="${largeImageURL}">
         <img
           class="gallery-image"
@@ -130,12 +119,10 @@ function templateImg(images) {
           <p class="amount">${downloads}</p>
         </div>
       </div>
-    </li>`
-    )
-    .join('');
+    </li>`;
 }
 
-function renderImg() {
-  const markup = templateImg(images);
+function renderImg(images) {
+  const markup = templateImg();
   gallery.insertAdjacentHTML('beforeend', markup);
 }
