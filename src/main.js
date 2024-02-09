@@ -76,6 +76,6 @@ function templateImg(images) {
 }
 
 function renderImg(images) {
-  const markup = templateImg();
+  const markup = templateImg(images);
   gallery.insertAdjacentHTML('beforeend', markup);
 }
