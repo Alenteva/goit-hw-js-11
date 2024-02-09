@@ -15,53 +15,6 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-// function templateImg(images) {
-//   const markup = images
-//     .map(
-//       ({
-//         webformatURL,
-//         largeImageURL,
-//         tags,
-//         likes,
-//         views,
-//         comments,
-//         downloads,
-//       }) =>
-//         ` <li class="gallery-item">
-//         <a class="gallery-link" href="${largeImageURL}">
-//           <img
-//             class="gallery-image"
-//             src="${webformatURL}"
-//             data-source="${largeImageURL}"
-//             width="360px"
-//             height="200px"
-//             alt="${tags}"
-//           />
-//         </a>
-//          <div class="thumb-block">
-//         <div class="block">
-//           <h2 class="title">Likes</h2>
-//           <p class="amount">${likes}</p>
-//         </div>
-//         <div class="block">
-//           <h2 class="title">Views</h2>
-//           <p class="amount">${views}</p>
-//         </div>
-//         <div class="block">
-//           <h2 class="title">Comments</h2>
-//           <p class="amount">${comments}</p>
-//         </div>
-//         <div class="block">
-//           <h2 class="title">Downloads</h2>
-//           <p class="amount">${downloads}</p>
-//         </div>
-//       </div>
-//       </li>`
-//     )
-//     .join('');
-//   gallery.insertAdjacentHTML('beforeend', markup);
-// }
-
 form.addEventListener('submit', e => {
   e.preventDefault();
   const search = e.target.elements.search.value;
