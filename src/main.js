@@ -45,7 +45,18 @@ function searchImg() {
 }
 
 function templateImg(images) {
-  return `<li class="gallery-item">
+  return images
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) =>
+        `<li class="gallery-item">
       <a class="gallery-link" href="${largeImageURL}">
         <img
           class="gallery-image"
@@ -54,7 +65,7 @@ function templateImg(images) {
           width="360"
         />
       </a>
-      <div class="thumb-block">
+      <div class="thumb-block"
         <div class="block">
           <h2 class="title">Likes</h2>
           <p class="amount">${likes}</p>
@@ -72,7 +83,9 @@ function templateImg(images) {
           <p class="amount">${downloads}</p>
         </div>
       </div>
-    </li>`;
+    </li>`
+    )
+    .join('');
 }
 
 function renderImg(images) {
