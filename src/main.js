@@ -16,7 +16,7 @@ form.addEventListener('submit', e => {
     return;
   }
   gallery.innerHTML = '';
-  showLoader();
+  loader.style.display = 'block';
   getSearchImg(search)
     .then(data => {
       renderImg(data.hits);
@@ -25,7 +25,7 @@ form.addEventListener('submit', e => {
       console.error(error);
     })
     .finally(() => {
-      hideLoader();
+      loader.style.display = 'none';
     });
   e.target.reset();
 });
@@ -105,15 +105,4 @@ function renderImg(images) {
     captionDelay: 250,
   });
   lightbox.refresh();
-}
-function showLoader() {
-  if (loader) {
-    loader.style.display = 'block';
-  }
-}
-
-function hideLoader() {
-  if (loader) {
-    loader.style.display = 'none';
-  }
 }
